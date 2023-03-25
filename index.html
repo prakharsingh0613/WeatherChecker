@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    
+    .header {
+      content: "";
+      /* position: absolute; */
+      background: url('../Img.jpg') no-repeat center center/cover;
+      height: 642px;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      z-index: -1;
+      opacity: 0.89;
+    }
+
+    .navbar {
+      text-align: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: bold;
+      color: aliceblue;
+    }
+
+    .nav-link {
+      color: aliceblue;
+      /* margin: 15px; */
+      margin-left: 16px;
+      padding: 12px;
+    }
+
+    .nav-item a:hover {
+      background-color: rgb(18, 139, 4);
+      color: black;
+      border-radius: 20px;
+    }
+    
+
+    .header1 {
+      text-align: center;
+    }
+    .card{
+      box-shadow: 10px 10px 10px 10px;
+      transition: transform .2s; /* Animation */
+      margin: 0 auto;
+    }
+    .card:hover{
+      transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    .card-title {
+      font-size: 50px;
+      font-weight: bold;
+      float: left;
+    }
+    .card-text{
+      font-size: 33px;
+    }
+    
+.row1 {
+    display: flex;
+    align-items: center;
+    /* vertically */
+    justify-content: center;
+    /* horizontally */
+    width: 1000px;
+    margin: 10px;
+    font-size: 40px;
+    color: white;
+}
+
+
+
+.globe-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: black;
+}
+
+.globe-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.india-image {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.globe-container:hover .globe-image {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.globe-container:hover .india-image {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+}
+.india-image{
+  width: 100%;
+  height: 333px;
+}
+
+.footer {
+   /* position: fixed; */
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(32, 30, 30);
+   color: rgb(255, 252, 252);
+   text-align: center;
+}
+.foot1{
+  margin-top: 55px;
+  margin-left:63px ;
+  float: left;
+}
+.foot2{
+  margin-top: 55px;
+  float: left;
+}
+.foot2 h3 a{
+  color: aliceblue;
+}
+.roww{
+  color: aliceblue;
+  font-size: 66px;
+  float: left;
+  margin-left: 53px;
+  margin-top: 77px;
+}
+.h{
+ 
+  margin-top: 33px;
+  margin-right: 33px;
+float: right;
+  opacity: 0.5;
+  color: black;
+  /* background-color: rgb(255, 27, 27); */
+  /* background: url('../img2.jpg') no-repeat center center/cover; */
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark " #id="Home">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#Home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#Cities">Cities</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#News">News</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="row">
+    <div class="col-sm">
+      <div class="header">
+        <!-- <img src="IMG/img.jpg" alt=""> -->
+        <div class="roww" id="weather">
+          
+      </div>
+       <div class="h">
+         <div class="card" style="width:550px">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm">
+              <h4 class="card-title">Weather Details</h4>
+            </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+            <p class="card-text">cloudy</p>
+          </div>
+              <div class="col-sm-6">
+            <p class="card-text">10%</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+        <p class="card-text">Humidity</p>
+      </div>
+          <div class="col-sm-6">
+        <p class="card-text">62%</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+    <p class="card-text">Wind</p>
+  </div>
+      <div class="col-sm-6">
+    <p class="card-text">8km/h</p>
+  </div>
+</div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="header1">
+        <h1 id="Cities">Cities</h1>
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="card" style="width:350px">
+              <img class="card-img-top" src="../img1.jpg" alt="Card image" style="width: 100%; height: 311px;">
+              <div class="card-body">
+                <h4 class="card-title">24°</h4>
+                <p class="card-text">Delhi</p>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-sm-4">
+            <div class="card" style="width:350px">
+              <img class="card-img-top" src="../img2.jpg" alt="Card image" style="width:100% ; height: 311px;">
+              <div class="card-body">
+                <h4 class="card-title">29°</h4>
+                <p class="card-text">Chennai</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="card" style="width:350px">
+              <img class="card-img-top" src="../img3.jpg" alt="Card image" style="width:100%; height: 311px;">
+              <div class="card-body">
+                <h4 class="card-title">40°</h4>
+                <p class="card-text">Jaipur </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<br><br><br>
+
+<div class="container">
+<div class="row">
+  <div class="col-sm">
+    <div class="row1" style="text-align: center;">
+      <form action="">
+          <input type="search" id="search" placeholder="Search by city name">
+      </form>
+  </div>
+  </div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+<div class="globe-container">
+  <img class="globe-image" src="../img4.jpg" alt="Globe">
+  <img class="india-image" src="../img5.jpg" alt="India">
+</div>
+</div>
+</div>
+</div>
+
+
+<br><br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="header1">
+        <h1 id="News">News</h1>
+        <br>
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="card" style="width:350px">
+              <img class="card-img-top" src="../img1.jpg" alt="Card image" style="width: 100%; height: 341px;">
+              
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Thunder Strikes</h4>
+             
+            </div>
+          </div>
+
+
+
+          <div class="col-sm-4">
+            <div class="card" style="width:350px">
+              <img class="card-img-top" src="../img2.jpg" alt="Card image" style="width:100% ; height: 341px;">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Cloudstorms</h4>
+             
+            </div>
+          </div>
+
+
+          <div class="col-sm-4">
+            <div class="card" style="width:350px">
+              <img class="card-img-top" src="../img3.jpg" alt="Card image" style="width:100%; height: 341px;">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Summer Season</h4>
+             
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
+<br><br><br>
+
+<div class="container-fluid">
+  
+<div class="footer">
+  <div class="row">
+
+    <div class="col-8">
+  <div class="foot1">
+    <h1>WEATHERAPP</h1>
+  </div>
+</div>
+<div class="col-2">
+  <div class="foot2">
+    <h3><a href="#">Home</a></h3>
+    <h3><a href="#Cities">Cities</a></h3>
+    <h3><a href="#News">News</a></h3><br><br><br>
+  </div>
+  </div>
+<div class="col-2">
+  <div class="foot2">
+    <h3>Contact Us</h3>
+    <h3>FAQs</h3>
+  </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+<script src="Weather.js"></script>
+</body>
+
+</html>
